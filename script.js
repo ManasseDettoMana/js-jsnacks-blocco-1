@@ -146,16 +146,29 @@
 // COPIA NELL'ARRAY PIù CORTO 
 
 
-// let vet1=["francesco", "pachi", "mana", "luca", "laura", "andrea"];
-// let vet2=["donatello", "giallo", "blu", "nero", "rosso", "viola", "marrone", "giovanna"];
+let vet1=["francesco", "pachi", "mana", "luca", "laura", "andrea"];
+let vet2=["donatello", "giallo", "blu", "nero", "rosso", "viola", "marrone", "giovanna"];
 
+if(vet2.length>vet1){
+    
+    for(let i=0; i<vet2.length - vet1.length; i++){
+        vet1.push(vet2[Math.floor(Math.random() * vet2.length)]);
+    }
+    
+    for(let i=0;i<vet1.length;i++){
+        document.getElementById("vettore_1").innerHTML += '<li>' + vet1[i] + '</li>';
+        document.getElementById("vettore_2").innerHTML += '<li>' + vet2[i] + '</li>';
+    
+    }
 
-// for(let i=0; i<vet2.length - vet1.length; i++){
-//     vet1.push(vet2[Math.floor(Math.random() * vet2.length)]);
-// }
-
-// for(let i=0;i<vet1.length;i++){
-//     document.getElementById("vettore_1").innerHTML += '<li>' + vet1[i] + '</li>';
-//     document.getElementById("vettore_2").innerHTML += '<li>' + vet2[i] + '</li>';
-
-// }
+}else{
+    for(let i=0; i<vet1.length - vet2.length; i++){
+        vet1.push(vet1[Math.floor(Math.random() * vet1.length)]);
+    }
+    
+    for(let i=0;i<vet1.length;i++){
+        document.getElementById("vettore_1").innerHTML += '<li>' + vet1[i] + '</li>';
+        document.getElementById("vettore_2").innerHTML += '<li>' + vet2[i] + '</li>';
+    
+    }
+}
